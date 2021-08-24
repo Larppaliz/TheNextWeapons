@@ -1,0 +1,58 @@
+using System;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+ 
+namespace TutorialMOD.Items        //We need this to basically indicate the folder where it is to be read from, so you the texture will load correctly
+{
+    public class MagicWeapon : ModItem
+    {
+        public override void SetDefaults()
+        {
+            item.name = "Magic"; //the name displayed when hovering over the Weapon ingame.         
+            item.damage = 34;   //The damage stat for the Weapon.                       
+            item.magic = true;   //This defines if it does magic damage and if its effected by magic increasing Armor/Accessories.
+            item.width = 24;      //The size of the width of the hitbox in pixels.
+            item.height = 28;      //The size of the height of the hitbox in pixels.
+            item.toolTip = "Casts a fire bolt.";  //The description of the Weapon shown when hovering over the Weapon ingame.
+            item.useTime = 30;     //How fast the Weapon is used.
+            item.useAnimation = 30;    //How long the Weapon is used for.
+            item.useStyle = 5;         //The way your Weapon will be used, 5 is the Holding Out Used for: Guns, Spellbooks, Drills, Chainsaws, Flails, Spears for example
+            item.noMelee = true;     //Setting to True allows the weapon sprite to stop doing damage, so only the projectile does the damge
+            item.knockBack = 2;  //The knockback stat of your Weapon.      
+            item.value = Item.buyPrice(0, 10, 0, 0); // How much the item is worth, in copper coins, when you sell it to a merchant. It costs 1/5th of this to buy it back from them. An easy way to remember the value is platinum, gold, silver, copper or PPGGSSCC (so this item price is 10gold)
+            item.rare = 6;   //The color the title of your Weapon when hovering over it ingame
+            item.mana = 5;//How many mana this weapon use
+            item.UseSound = SoundID.Item21; //item.UseSound = SoundID.Item1;   //The sound played when using your Weapon
+            item.autoReuse = true; //Weather your Weapon will be used again after use while holding down, if false you will need to click again after use to use it again.
+            item.shoot = mod.ProjectileType("YourProjectileName");  //This defines what type of projectile this weapon will shoot   
+            item.shootSpeed = 10f;    //This defines the projectile speed when shoot
+        }
+ 
+        //-----------------------------------------------StarWrath projectile style----------------------------------------------
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            int numberProjectiles = 6 + Main.rand.Next(2);  //This defines how many projectiles to shot
+            for (int index = 0; index < numberProjectiles; ++index)
+            {
+                Vector2 vector2_1 = new Vector2((float)((double)player.position.X + (double)player.width * 0.5 + (double)(Main.rand.Next(201) * -player.direction) + ((double)Main.mouseX + (double)Main.screenPosition.X - (double)player.position.X)), (float)((double)player.position.Y + (double)player.height * 0.5 - 600.0));   //this defines the projectile width, direction and position
+                vector2_1.X = (float)(((double)vector2_1.X + (double)player.Center.X) / 2.0) + (float)Main.rand.Next(-200, 201);
+                vector2_1.Y -= (float)(100 * index);
+                float num12 = (float)Main.mouseX + Main.screenPosition.X - vector2_1.X;
+                float num13 = (float)Main.mouseY + Main.screenPosition.Y - vector2_1.Y;
+                if ((double)num13 < 0.0) num13 *= -1f;
+                if ((double)num13 < 20.0) num13 = 20f;
+                float num14 = (float)Math.Sqrt((double)num12 * (double)num12 + (double)num13 * (double)num13);
+                float num15 = item.shootSpeed / num14;
+                float num16 = num12 * num15;
+                float num17 = num13 * num15;
+                float SpeedX = num16 + (float)Main.rand.Next(-40, 41) * 0.02f;  //this defines the projectile X position speed and randomnes
+                float SpeedY = num17 + (float)Main.rand.Next(-40, 41) * 0.02f;  //this defines the projectile Y position speed and randomnes
+                Projectile.NewProjectile(vector2_1.X, vector2_1.Y, SpeedX, SpeedY, type, damage, knockBack, Main.myPlayer, 0.0f, (float)Main.rand.Next(5));
+            }
+            return false;
+        }  
+ 
+    }
+}
