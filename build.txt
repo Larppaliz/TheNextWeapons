@@ -1,0 +1,4 @@
+displayName = Bread's Weaponry
+author = Breadcast
+version = 1.21
+homepage = https://discord.gg/PwMV8yVh

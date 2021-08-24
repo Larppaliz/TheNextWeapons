@@ -1,0 +1,7 @@
+Adds Longswords, Daggers and a lot more stuff just because i can
+
+
+version 1.2
+- Added More tools
+- Fixed Stuff
+- Traveler NPC
