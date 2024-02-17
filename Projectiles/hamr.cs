@@ -1,63 +1,55 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheNextWeapons.Projectiles
 {
-	public class hamr : ModProjectile
-	{
-		public override void SetDefaults()
-		{
+    public class hamr : ModProjectile
+    {
+        public override void SetDefaults()
+        {
 
-			projectile.width = 20;
-			projectile.height = 20;
-			projectile.friendly = true;
-			projectile.aiStyle = 27;
-			projectile.timeLeft = 400;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = true;
-			projectile.penetrate = 3;
-			projectile.light = 0.8f;
-		}
+            Projectile.width = 28;
+            Projectile.height = 28;
+            Projectile.friendly = true;
+            Projectile.aiStyle = 0;
+            Projectile.timeLeft = 200;
+            Projectile.tileCollide = true;
+            Projectile.ignoreWater = true;
+            Projectile.penetrate = 4;
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 10;
+        }
+        public override Color? GetAlpha(Color lightColor) => new Color(200, 200, 200, 0);
 
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("hammer");
+        public override void SetStaticDefaults()
+        {
+            // DisplayName.SetDefault("Magic Mallet");
 
-		}
+        }
 
-		public override void Kill(int timeLeft)
-		{
-			for (int k = 0; k < 5; k++)
-			{
-				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 15, projectile.oldVelocity.X * 1.0f, projectile.oldVelocity.Y * 1.0f);
-			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 20);
-		}
+        public override void OnKill(int timeLeft)
+        {
+            for (int k = 0; k < 5; k++)
+            {
+                int dust = Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 204, Projectile.oldVelocity.X * 1.0f, Projectile.oldVelocity.Y * 1.0f, 1, default(Color), 0.5f);
+            }
+        }
 
-		public override void AI()
-		{
-			int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 15, projectile.velocity.X * 1f, projectile.velocity.Y * 1f, 10, default(Color), 1f);
-			Main.dust[dust].noGravity = true;
-		}
-
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			if (Main.rand.NextBool(2))
-			{
-				target.AddBuff(0, 0, true);
-			}
-
-			projectile.ai[0] += 0.1f;
-			projectile.velocity *= 0.50f;
-		}
-
-		public override void OnHitPvp(Player target, int damage, bool crit)
-		{
-			if (Main.rand.NextBool(2))
-			{
-				target.AddBuff(0, 0, false);
-			}
-		}
-	}
+        public override void AI()
+        {
+            int dust = Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 204, Projectile.velocity.X * 1.0f, Projectile.velocity.Y * 1.0f, 1, default(Color), 0.5f);
+            Main.dust[dust].noGravity = true;
+            if (Projectile.timeLeft == 170)
+            {
+                Projectile.velocity *= 0.5f;
+            }
+            if (Projectile.timeLeft < 170)
+            {
+                Projectile.velocity.Y -= 0.2f;
+            }
+                Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.ToRadians(45f);
+        }
+    }
 }

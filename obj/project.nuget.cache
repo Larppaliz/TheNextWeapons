@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mQZXpho79N+XlWLy7IVwlXvo6LDlxB1GrY4fVa3yeRiGnehE+MRnlEEFjaqSLj2hhzdfBlR7KBu88TzTrAkXkQ==",
+  "success": true,
+  "projectFilePath": "C:\\ModSources\\ModSources\\TheNextWeapons\\TheNextWeapons.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gr275765\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,7 @@
+Version 2.0.0
+
+Additions
+
+Changes
+- Remade Ruby Sword into Royal Ruby Claymore
+- Remade Amber Sword into Fossilized Amberblade

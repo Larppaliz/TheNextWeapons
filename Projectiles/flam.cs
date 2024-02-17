@@ -4,58 +4,55 @@ using Terraria.ModLoader;
 
 namespace TheNextWeapons.Projectiles
 {
-	public class flam : ModProjectile
-	{
-		public override void SetDefaults()
-		{
+    public class flam : ModProjectile
+    {
+        public override void SetDefaults()
+        {
 
-			projectile.width = 12;
-			projectile.height = 12;
-			projectile.friendly = true;
-			projectile.aiStyle = 23;
-			projectile.penetrate = 5;
-			projectile.maxPenetrate = 5;
-			projectile.timeLeft = 200;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = true;
-		}
+            Projectile.width = 12;
+            Projectile.height = 12;
+            Projectile.friendly = true;
+            Projectile.aiStyle = 23;
+            Projectile.penetrate = 5;
+            Projectile.maxPenetrate = 5;
+            Projectile.timeLeft = 200;
+            Projectile.tileCollide = true;
+            Projectile.ignoreWater = true;
+        }
 
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Flame");
+        public override void SetStaticDefaults()
+        {
+            // DisplayName.SetDefault("Flame");
 
-		}
+        }
 
-		public override void Kill(int timeLeft)
-		{
-			for (int k = 0; k < 0; k++)
-			{
-				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 6, projectile.oldVelocity.X * 2f, projectile.oldVelocity.Y * 2f);
-			}
-		}
+        public override void OnKill(int timeLeft)
+        {
+            for (int k = 0; k < 0; k++)
+            {
+                int dust = Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 6, Projectile.oldVelocity.X * 2f, Projectile.oldVelocity.Y * 2f);
+            }
+        }
 
-		public override void AI()
-		{
-			int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 6, projectile.velocity.X * 2f, projectile.velocity.Y * 2f, 1, default(Color), 2f);
-			Main.dust[dust].noGravity = true;
-		}
+        public override void AI()
+        {
+            int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 6, Projectile.velocity.X * 2f, Projectile.velocity.Y * 2f, 1, default(Color), 2f);
+            Main.dust[dust].noGravity = true;
+        }
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			if (Main.rand.NextBool(1))
-			{
-				target.AddBuff(24, 400, true);
-			}
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (Main.rand.NextBool(1))
+            {
+                target.AddBuff(24, 400, true);
+            }
 
-			projectile.velocity *= 1.0f;
-		}
+            Projectile.velocity *= 1.0f;
+        }
 
-		public override void OnHitPvp(Player target, int damage, bool crit)
-		{
-			if (Main.rand.NextBool(1))
-			{
-				target.AddBuff(24, 400, false);
-			}
-		}
-	}
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
+        {
+                target.AddBuff(24, 400, false);
+        }
+    }
 }

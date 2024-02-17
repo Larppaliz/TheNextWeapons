@@ -1,0 +1,102 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TheNextWeapons.NPCs
+{
+    public class OverrideShop : GlobalNPC
+    {
+        public static bool VoidSet = false;
+        public static bool buffThing = false;
+        public override void ModifyActiveShop(int type, Chest shop, ref int nextSlot)
+        {
+            if (type == NPCID.Demolitionist)
+            {
+                if (NPC.downedMechBossAny)   //this make so when Skeletron is killed the town npc will sell this
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Ranged.RocketGun>());
+                    shop.item[nextSlot].shopCustomPrice = 500000;
+                    nextSlot++;
+                }
+            }
+        }
+
+        public override void AI(NPC npc)
+        {
+            buffThing = false;
+            VoidSet = false;
+            base.AI(npc);
+        }
+        public override void GetChat(NPC npc, ref string chat)
+        {
+            Player player = Main.LocalPlayer;
+            if (player.HasItem(ModContent.ItemType<Items.Melee.OldWoodSword>()))
+            {
+                if (Main.rand.NextBool(2))
+                {
+                    chat = "[c/ffffa0:I won't just tinker around with what you find, i can also try repairing whatever objects you find broken.]";
+                }
+            }
+        }
+
+        public override void ModifyHitPlayer(NPC npc, Player target, ref int damage, ref bool crit)
+        {
+            if (target.HasBuff(ModContent.BuffType<Buffs.OSDefBuff>()))
+            {
+                target.statMana -= 40;
+            }
+            if (VoidSet)
+            {
+                int trueDamage = damage - (target.statDefense / 2);
+                if (trueDamage > 0)
+                {
+                        if (trueDamage > target.statManaMax2)
+                    {
+                        target.ManaEffect(target.statManaMax2 * -1);
+                        target.statMana = 0;
+                    }
+                    else
+                    {
+                        if (trueDamage > target.statMana)
+                        {
+                            damage -= target.statMana;
+                            target.ManaEffect(target.statMana * -1);
+                            target.statMana = 0;
+                        }
+                        else
+                        {
+                            damage -= target.statMana;
+                            target.ManaEffect(trueDamage * -1);
+                            target.statMana -= trueDamage;
+                        }
+                    }
+                }
+                else { damage -= target.statMana; }
+            }
+            base.OnHitPlayer(npc, target, damage, crit);
+        }
+        public override void OnKill(NPC npc)
+        {
+            if (ModContent.GetInstance<Config>().GenerateOres)
+            {
+                if (npc.type == NPCID.TheDestroyer || npc.type == NPCID.SkeletronPrime || npc.type == NPCID.Spazmatism || npc.type == NPCID.Retinazer)
+                {
+                    if (!NPC.downedMechBossAny)
+                    {
+                        for (int x = 0; x < Main.maxTilesX; x++)
+                        {
+                            for (int y = 0; y < Main.maxTilesY; y++)
+                            {
+                                if ((Main.tile[x, y].TileType == TileID.Demonite || Main.tile[x, y].TileType == TileID.Crimtane))
+                                {
+                                    Main.tile[x, y].TileType = (ushort)ModContent.TileType<Tiles.VoidOre>();
+                                }
+                            }
+                        }
+                        Main.NewText("[c/7d26cd:It feels like your mana is being pulled towards something underground.]");
+                    }
+                }
+            }
+        }
+    }
+}

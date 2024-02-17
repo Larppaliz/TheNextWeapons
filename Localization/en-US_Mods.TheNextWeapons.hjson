@@ -1,0 +1,475 @@
+Tiles: {
+}
+
+Buffs: {
+	Death: {
+	}
+
+	Debuff: {
+	}
+
+	Drenched: {
+		DisplayName: Drenched
+		Description: Mods.TheNextWeapons.Buffs.Drenched.Description
+	}
+
+	Freeze: {
+	}
+
+	Injured: {
+		DisplayName: Injured
+		Description: Mods.TheNextWeapons.Buffs.Injured.Description
+	}
+
+	op: {
+	}
+
+	Ore.Description: Mods.TheNextWeapons.Buffs.Ore.Description
+
+	OSDefBuff: {
+		DisplayName: O S Def Buff
+		Description: Mods.TheNextWeapons.Buffs.OSDefBuff.Description
+	}
+
+	Papercut: {
+	}
+
+	Radiated: {
+	}
+
+	Radiation: {
+	}
+
+	Sacrifice: {
+	}
+
+	EnchantedShield: {
+		DisplayName: Enchanted Shield
+		Description: Mods.TheNextWeapons.Buffs.EnchantedShield.Description
+	}
+
+	Red_Fire: {
+		DisplayName: Red_ Fire
+		Description: Mods.TheNextWeapons.Buffs.Red_Fire.Description
+	}
+}
+
+Items: {
+	CrackedEmblem: {
+	}
+
+	EarthStaff: {
+	}
+
+	EMG_01B: {
+		DisplayName: E M G_01 B
+		Tooltip: ""
+	}
+
+	MagicMallet: {
+	}
+
+	ArcaneBlade.Tooltip: ""
+
+	Arondite: {
+	}
+
+	CharredScythe: {
+	}
+
+	CrystalSword.Tooltip: ""
+	CursedBlade.Tooltip: ""
+
+	Darkheart: {
+	}
+
+	DesertBlade2.Tooltip: ""
+
+	EngravedSteelGreatsword: {
+		DisplayName: Engraved Steel Greatsword
+		Tooltip: ""
+	}
+
+	FixedSword.Tooltip: ""
+
+	Fleshrender: {
+	}
+
+	FrostedSword.Tooltip: ""
+	AmberSword.Tooltip: ""
+	AmethystSword.Tooltip: ""
+	DiamondSword.Tooltip: ""
+	EmeraldSword.Tooltip: ""
+	RubySword.Tooltip: ""
+	SapphireSword.Tooltip: ""
+	TopazSword.Tooltip: ""
+
+	GreatSword: {
+		DisplayName: Great Sword
+		Tooltip: ""
+	}
+
+	IchorSword.Tooltip: ""
+
+	Kinslayer: {
+	}
+
+	Knightfall: {
+	}
+
+	LeafySword.Tooltip: ""
+	OceanBlade.Tooltip: ""
+
+	OldSword: {
+	}
+
+	OldWoodSword: {
+	}
+
+	Pearlloom.Tooltip: ""
+
+	PoisonedStinger: {
+		DisplayName: Poisoned Stinger
+		Tooltip: ""
+	}
+
+	RustedBlade: {
+	}
+
+	SacrificeBlade: {
+	}
+
+	Scarlet: {
+		DisplayName: Scarlet
+		Tooltip: ""
+	}
+
+	ShiningClaymore: {
+	}
+
+	SparkingSword: {
+	}
+
+	SteelBroadsword.Tooltip: ""
+	SteelLongsword.Tooltip: ""
+	SteelShortsword.Tooltip: ""
+
+	StoneSword: {
+	}
+
+	SwordTest: {
+	}
+
+	GeigerNullifier: {
+	}
+
+	RadiumArrow.Tooltip: ""
+	RadiumAxe.Tooltip: ""
+	RadiumBar.Tooltip: ""
+	RadiumBow.Tooltip: ""
+
+	RadiumBreastplate: {
+	}
+
+	RadiumBroadsword.Tooltip: ""
+
+	RadiumHelmet: {
+	}
+
+	RadiumLeggings: {
+	}
+
+	RadiumOre.Tooltip: ""
+	RadiumPickaxe.Tooltip: ""
+	RadiumRanseur.Tooltip: ""
+	RadiumStaff.Tooltip: ""
+	AA12.Tooltip: ""
+	Ak47.Tooltip: ""
+
+	BaT_APC: {
+		DisplayName: Ba T_ A P C
+		Tooltip: ""
+	}
+
+	Eradicator.Tooltip: ""
+
+	Famas: {
+	}
+
+	FrostSMG: {
+	}
+
+	GalilMAR.Tooltip: ""
+	AmethystBow.Tooltip: ""
+	DiamondBow.Tooltip: ""
+	EmeraldBow.Tooltip: ""
+	RubyBow.Tooltip: ""
+	SapphireBow.Tooltip: ""
+	TopazBow.Tooltip: ""
+
+	Gnu: {
+		DisplayName: Gnu
+		Tooltip: ""
+	}
+
+	JimmyGun: {
+	}
+
+	Netherstrand.Tooltip: ""
+	OtherworldlyString2.Tooltip: ""
+	P250.Tooltip: ""
+	PumpShotgun.Tooltip: ""
+
+	Quadrant: {
+	}
+
+	RocketGun: {
+	}
+
+	Scattergun: {
+		DisplayName: Scattergun
+		Tooltip: ""
+	}
+
+	SodaliteBar.Tooltip: ""
+
+	SodaliteBreastplate: {
+	}
+
+	SodaliteBroadsword.Tooltip: ""
+
+	SodaliteBullarang: {
+	}
+
+	SodaliteDualshot.Tooltip: ""
+
+	SodaliteHelmet: {
+	}
+
+	SodaliteLeggings: {
+	}
+
+	SodaliteOre.Tooltip: ""
+	SodalitePickaxe.Tooltip: ""
+	SodaliteShortsword.Tooltip: ""
+
+	SodaliteStaff: {
+	}
+
+	SodaliteThrowingKnife.Tooltip: ""
+	SodaliteWaraxe.Tooltip: ""
+
+	BarofSouls: {
+	}
+
+	SoulBoots: {
+	}
+
+	SoulBow: {
+	}
+
+	SoulBreastplate: {
+	}
+
+	SoulMask: {
+	}
+
+	SoulSaber.Tooltip: ""
+	SoulSlasher.Tooltip: ""
+	SoulStaff.Tooltip: ""
+	SoulStriker.Tooltip: ""
+
+	bbook: {
+	}
+
+	CaulkGun: {
+	}
+
+	ChessSet: {
+		DisplayName: Chess Set
+		Tooltip: ""
+	}
+
+	ColSwod: {
+	}
+
+	DigitalBow: {
+	}
+
+	dualmini: {
+	}
+
+	freze: {
+	}
+
+	Hp: {
+	}
+
+	Hpe: {
+	}
+
+	lasermini: {
+	}
+
+	mini: {
+	}
+
+	MoreMinions: {
+	}
+
+	Onx: {
+	}
+
+	Opifier: {
+	}
+
+	paper: {
+	}
+
+	CritCombo: {
+	}
+
+	DefenseIgnore: {
+	}
+
+	Delete: {
+	}
+
+	Maxlife: {
+	}
+
+	Percent: {
+	}
+
+	StackDamage: {
+	}
+
+	TrueDelete: {
+	}
+
+	ZenithStaff: {
+	}
+
+	VoidBar.Tooltip: ""
+
+	VoidBody: {
+	}
+
+	VoidBow.Tooltip: ""
+
+	VoidHead: {
+	}
+
+	VoidLegs: {
+	}
+
+	VoidOre: {
+	}
+
+	VoidPickaxeaxe.Tooltip: ""
+	VoidStaff.Tooltip: ""
+	VoidSword.Tooltip: ""
+	VoidTrident.Tooltip: ""
+
+	Tidecaller: {
+		DisplayName: Tidecaller
+		Tooltip: ""
+	}
+
+	VerdantLeafcutter: {
+		DisplayName: Verdant Leafcutter
+		Tooltip: ""
+	}
+
+	Duneblade: {
+		DisplayName: Duneblade
+		Tooltip: ""
+	}
+
+	Grovebane: {
+		DisplayName: Grovebane
+		Tooltip: ""
+	}
+
+	Stingblade.DisplayName: Stingblade
+
+	Frostbite: {
+		DisplayName: Frostbite
+		Tooltip: ""
+	}
+
+	EbonflameBlade: {
+		DisplayName: Ebonflame Blade
+		Tooltip: ""
+	}
+
+	IchorwhisperClaymore: {
+		DisplayName: Ichorwhisper Claymore
+		Tooltip: ""
+	}
+
+	Flameberge: {
+		DisplayName: Flameberge
+		Tooltip: ""
+	}
+
+	Paragon: {
+		DisplayName: Paragon
+		Tooltip: ""
+	}
+}
+
+NPCs: {
+	Guy.DisplayName: Guy
+	MechBoss.DisplayName: Mech Boss
+
+	Rogue: {
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+}
+
+Projectiles: {
+	AirSlashThingX.DisplayName: Air Slash Thing X
+	Pawn.DisplayName: Pawn
+	Priest.DisplayName: Priest
+	PriestExplode.DisplayName: Priest Explode
+	Rotaters.DisplayName: Rotaters
+	ElectricBlast.DisplayName: Electric Blast
+	LinkedSword.DisplayName: Linked Sword
+	DusaStomp.DisplayName: Dusa Stomp
+	Scarlet.DisplayName: Scarlet
+	ShadowShot.DisplayName: Shadow Shot
+	WaterSlash.DisplayName: Water Slash
+	WaterShot.DisplayName: Water Shot
+	LeafSlash.DisplayName: Leaf Slash
+	CursedFlame.DisplayName: Cursed Flame
+	IchorBlast.DisplayName: Ichor Blast
+	SoulStaffShard.DisplayName: Soul Staff Shard
+	GroundStaff.DisplayName: Ground Staff
+}
+
+Configs: {
+	Config: {
+		DisplayName: Config
+		Headers.General: General Header
+
+		SpawnTownNPC: {
+			Label: Spawn mod town npcs?
+			Tooltip: Toggles if the town npcs from this mod can spawn
+		}
+
+		GenerateOres: {
+			Label: Generate mod ores?
+			Tooltip: Toggle if the mod generates the ores on map gen
+		}
+	}
+}

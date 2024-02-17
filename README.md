@@ -1,2 +1,0 @@
-# TheNextWeapons-
-Terraria mod :/

@@ -1,0 +1,237 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.ModLoader.Utilities;
+
+namespace TheNextWeapons.NPCs.MechBoss
+{
+    // Party Zombie is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/blushiemagic/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
+    public class MechBoss : ModNPC
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("M3-Duse");
+            Main.npcFrameCount[NPC.type] = 9;
+        }
+
+        public override void SetDefaults()
+        {
+            NPC.width = 120;
+            NPC.height = 190;
+            NPC.damage = 30;
+            NPC.defense = 15;
+            NPC.lifeMax = 4500;
+            NPC.aiStyle = 0;
+            NPC.boss = true;
+            NPC.noTileCollide = false;
+            NPC.noGravity = false;
+            NPC.HitSound = SoundID.NPCHit4;
+            NPC.DeathSound = SoundID.NPCDeath6;
+            NPC.value = 75000;
+            NPC.knockBackResist = 0f;
+            NPC.stepSpeed = 2.5f;
+            NPC.frameCounter = 9;
+            NPC.lavaImmune = true;
+            state = "Walk";
+            statetimer = 0;
+            frame = 0;
+            stompdelay = 300;
+        }
+
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            return SpawnCondition.OverworldNightMonster.Chance * 0f;
+        }
+        Vector2 oldpos;
+        int walktimer;
+        int frame;
+        int truedirection;
+        int teleporttimer;
+        Vector2 oldoldpos;
+        string state;
+        int statetimer;
+        int stompdelay;
+        public override void AI()
+        {
+            if (Main.player[NPC.target].dead)
+            {
+                frame = 1;
+                state = "Stand";
+                teleporttimer--;
+                if (teleporttimer <= 0)
+                {
+                    if (NPC.Distance(Main.player[NPC.target].Center) < 2000f)
+                    {
+                        Teleport(new Vector2(0, 0));
+                    }
+                }
+            }
+            else
+            {
+                stompdelay--;
+                NPC.frame.Y = (int)NPC.frame.Height * (frame - 1);
+                if (NPC.Center.X - Main.player[NPC.target].Center.X > 70 || NPC.Center.X - Main.player[NPC.target].Center.X < -70)
+                {
+                    if (state == "Stand" || state == "Walk")
+                    {
+                        Walk(NPC.stepSpeed, NPC.direction);
+                        if (oldpos.Distance(NPC.Center) < 1f)
+                        {
+                            NPC.velocity.Y -= 1f * NPC.stepSpeed;
+                            NPC.velocity.Y *= 1.5f;
+                        }
+                        if (stompdelay <= 0 && statetimer == 0 && (NPC.Center.X - Main.player[NPC.target].Center.X > 100 || NPC.Center.X - Main.player[NPC.target].Center.X < -100))
+                        {
+                            state = "Stomp";
+                        }
+                    }
+                }
+                else
+                {
+                    if (state == "Walk")
+                    {
+                        state = "Stand";
+                        frame = 1;
+                    }
+                }
+                if (state == "Stomp")
+                {
+                    Stomp();
+                }
+                if (oldpos.Distance(NPC.Center) < 0.5f)
+                {
+                    if (state == "Stand" || state == "Walk")
+                    {
+                        teleporttimer--;
+                        if (teleporttimer <= 0)
+                        {
+                            if (!Main.player[NPC.target].dead)
+                            {
+                                if (NPC.Distance(Main.player[NPC.target].Center) < 2000f)
+                                {
+                                    Teleport(Main.player[NPC.target].Center);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (teleporttimer < 60)
+                    {
+                        teleporttimer++;
+                    }
+                }
+                if (walktimer <= 0 && state == "Walk")
+                {
+                    if (Main.player[NPC.target].active && !Main.player[NPC.target].dead)
+                    {
+                        if (Main.player[NPC.target].position.X > NPC.position.X)
+                        {
+                            if (NPC.position.X + 50 < NPC.position.Y)
+                            {
+                                NPC.direction = 1;
+                            }
+                        }
+                        else
+                        {
+                            if (NPC.position.X - 50 > NPC.position.Y)
+                            {
+                                NPC.direction = -1;
+                            }
+                        }
+                    }
+                    walktimer = (int)(20 / NPC.stepSpeed);
+                    if (frame >= 6)
+                    {
+                        frame = 1;
+                    }
+                    else
+                    {
+                        frame++;
+                    }
+                }
+                oldoldpos = oldpos;
+                oldpos = NPC.Center;
+            }
+                            for (int i = 0; i < (60 - teleporttimer) / 3; i++)
+                {
+                    int dust2 = Dust.NewDust(NPC.position, NPC.width, NPC.height, 90, Main.rand.NextFloat(-5f, 5f), -5f, 0, default(Color), 1+i/10);
+                    Main.dust[dust2].noGravity = true;
+                }
+            if (Main.player[NPC.target].dead)
+            {
+                if (NPC.Distance(Main.player[NPC.target].Center) > 900f)
+                {
+                    NPC.EncourageDespawn(50);
+                }
+            }
+            if (NPC.Distance(Main.player[NPC.target].Center) > 2500f)
+            {
+                NPC.EncourageDespawn(180);
+            }
+        }
+        public void Walk(float walkspeed, int walkdirection)
+        {
+            state = "Walk";
+            NPC.velocity.X = walkspeed * walkdirection;
+            walktimer--;
+        }
+
+        public void Stomp()
+        {
+            statetimer++;
+            if (statetimer == 30)
+            {
+                frame = 7;
+            }
+            if (statetimer == 60)
+            {
+                frame = 8;
+            }
+            if (statetimer == 100)
+            {
+                frame = 9;
+                Projectile.NewProjectileDirect(NPC.GetSource_FromThis(), NPC.Center + new Vector2(0, NPC.height / 2), new Vector2(-10f, 0), ModContent.ProjectileType<Projectiles.MechBoss.DusaStomp>(), NPC.damage, 10f); ;
+                Projectile.NewProjectileDirect(NPC.GetSource_FromThis(), NPC.Center + new Vector2(0, NPC.height / 2), new Vector2(10f, 0), ModContent.ProjectileType<Projectiles.MechBoss.DusaStomp>(), NPC.damage, 10f); ;
+            }
+            if (statetimer == 110)
+            {
+                frame = 1;
+            }
+            if (statetimer == 120)
+            {
+                stompdelay = Main.rand.Next(100,600);
+                frame = 1;
+                state = "Stand";
+                statetimer = 0;
+            }
+        }
+            public void Teleport(Vector2 position)
+            {
+            if (Main.player[NPC.target].dead)
+            {
+                position.Y *= 500;
+            }
+                teleporttimer = 60;
+                position.Y -= NPC.height / 2;
+                if (state == "Walk")
+                {
+                    if (Main.rand.NextBool(2))
+                    {
+                        position.X -= 250;
+                    }
+                    else
+                    {
+                        position.X += 250;
+                    }
+                }
+                NPC.Teleport(position - (new Vector2(NPC.width, NPC.height) / 2), 1);
+            }
+
+        public override void HitEffect(int hitDirection, double damage)
+        {
+        }
+    }
+}

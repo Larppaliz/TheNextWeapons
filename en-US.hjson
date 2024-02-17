@@ -1,0 +1,631 @@
+Mods: {
+	TheNextWeapons: {
+		Buffs: {
+			Death: {
+				DisplayName: Leaking
+				Description: "'You feel weak'"
+			}
+
+			Debuff: {
+				DisplayName: Desert Curse
+				Description: You Are Cursed and your defense is 5 less
+			}
+
+			Freeze: {
+				DisplayName: Frozen
+				Description: "'Chilling down your spines'"
+			}
+
+			op: {
+				DisplayName: Opified
+				Description: Youve been OPified
+			}
+
+			Ore.DisplayName: Heart Broken
+
+			Papercut: {
+				DisplayName: Papercut
+				Description: You've been cut by paper and it hurts
+			}
+
+			Radiated: {
+				DisplayName: Radiation Poisoning
+				Description: You're Losing Life
+			}
+
+			Radiation: {
+				DisplayName: Radiation Poisoning
+				Description: Radiation is eating away at your flesh
+			}
+
+			Sacrifice: {
+				DisplayName: Sacrifice
+				Description: The Sword is using your blood to gain strength
+			}
+
+			DefenseBuffPlayer: {
+				DisplayName: Defense Buff Player
+				Description: Mods.TheNextWeapons.Buffs.DefenseBuffPlayer.Description
+			}
+
+			DesertsCurse: {
+				DisplayName: Deserts Curse
+				Description: Mods.TheNextWeapons.Buffs.DesertsCurse.Description
+			}
+
+			Frozen: {
+				DisplayName: Frozen
+				Description: Mods.TheNextWeapons.Buffs.Frozen.Description
+			}
+
+			HeartBroken: {
+				DisplayName: Heart Broken
+				Description: Mods.TheNextWeapons.Buffs.HeartBroken.Description
+			}
+
+			Leaking: {
+				DisplayName: Leaking
+				Description: Mods.TheNextWeapons.Buffs.Leaking.Description
+			}
+		}
+
+		Items: {
+			CrackedEmblem: {
+				DisplayName: Cracked Emblem
+				Tooltip:
+					'''
+					An old cracked emblem with an unknown gem inside
+					Increased crit chance and damage by 5%
+					'''
+			}
+
+			EarthStaff: {
+				DisplayName: Ground Staff
+				Tooltip: Hold down to create earth pieces that float around you and release to launch them
+			}
+
+			MagicMallet: {
+				DisplayName: Magic Mallet
+				Tooltip: A magical returning mallet
+			}
+
+			ArcaneBlade.DisplayName: Arcane Blade
+
+			Arondite: {
+				DisplayName: Arondite
+				Tooltip:
+					'''
+					'The ultimate sword used by the ultimate hero'
+					[c/eeaa33:Gets stronger as you kill bosses]
+					Cant get prefixes
+					'''
+			}
+
+			CharredScythe: {
+				DisplayName: Charred Scythe
+				Tooltip: Killing enemies increases damage temporarily
+			}
+
+			CrystalSword.DisplayName: Crystal Sword
+			CursedBlade.DisplayName: Cursed Blade
+
+			Darkheart: {
+				DisplayName: Darkheart
+				Tooltip: Crits do 50% more damage and cause leaking
+			}
+
+			DesertBlade2.DisplayName: Desert Blade
+			FixedSword.DisplayName: Dynasty Sword
+
+			Fleshrender: {
+				DisplayName: Fleshrender
+				Tooltip: Does more damage based on your defense
+			}
+
+			FrostedSword.DisplayName: Frosted Sword
+			AmberSword.DisplayName: Fossilized Amberblade
+			AmethystSword.DisplayName: Amethyst Sword
+			DiamondSword.DisplayName: Diamond Sword
+			EmeraldSword.DisplayName: Emerald Sword
+			RubySword.DisplayName: Royal Ruby Claymore
+			SapphireSword.DisplayName: Sapphire Sword
+			TopazSword.DisplayName: Topaz Sword
+			IchorSword.DisplayName: Ichor Sword
+
+			Kinslayer: {
+				DisplayName: Kinslayer
+				Tooltip: Right click to steal the enemies damage
+			}
+
+			Knightfall: {
+				DisplayName: Knightfall
+				Tooltip: Does more damage based on Crit Chance
+			}
+
+			LeafySword.DisplayName: Verdant Leafcutter
+			OceanBlade.DisplayName: Tidecaller
+
+			OldSword: {
+				DisplayName: Old Sword
+				Tooltip:
+					'''
+					Damaging enemies is less random than normal
+					Made of a metal that does not rust
+					'''
+			}
+
+			OldWoodSword: {
+				DisplayName: Broken Sword
+				Tooltip: Damaging enemies is more random than normal
+			}
+
+			Pearlloom.DisplayName: Pearlloom
+			Stingblade.Tooltip: Inflicts venom on crit
+
+			RustedBlade: {
+				DisplayName: Rusted Blade
+				Tooltip: Crits do 120% less damage
+			}
+
+			SacrificeBlade: {
+				DisplayName: Sacrifice Blade
+				Tooltip: Right click to change the amount of blood the sword can drain
+			}
+
+			ShiningClaymore: {
+				DisplayName: Shining Claymore
+				Tooltip: It Looks Like Its Worth A Million
+			}
+
+			SparkingSword: {
+				DisplayName: Spooky Sparking Sword
+				Tooltip: Sets Enemies Ablaze
+			}
+
+			SteelBroadsword.DisplayName: Steel Broadsword
+			SteelLongsword.DisplayName: Steel Longsword
+			SteelShortsword.DisplayName: Steel Shortsword
+
+			StoneSword: {
+				DisplayName: Ancient Stone Sword
+				Tooltip: An ancient stone sword left from long long ago
+			}
+
+			SwordTest: {
+				DisplayName: Dark Age Katana
+				Tooltip: Gets faster the more times you hit enemies in a row
+			}
+
+			GeigerNullifier: {
+				DisplayName: Geiger Nullifier
+				Tooltip: Increases Health Regen and nullifies radioactivity
+			}
+
+			RadiumArrow.DisplayName: Radium Arrow
+			RadiumAxe.DisplayName: Radium Axe
+			RadiumBar.DisplayName: Radium Bar
+			RadiumBow.DisplayName: Radium Longbow
+
+			RadiumBreastplate: {
+				DisplayName: Radium Breastplate
+				Tooltip: Ranged Crit Chance Increased By 20%
+			}
+
+			RadiumBroadsword.DisplayName: RadiumBroadsword
+
+			RadiumHelmet: {
+				DisplayName: Radium Helmet
+				Tooltip: 6% increased Ranged damage
+			}
+
+			RadiumLeggings: {
+				DisplayName: Radium Leggings
+				Tooltip: 15% Increased Movement Speed
+			}
+
+			RadiumOre.DisplayName: Radium Ore
+			RadiumPickaxe.DisplayName: Radium Pickaxe
+			RadiumRanseur.DisplayName: Radium Ranseur
+			RadiumStaff.DisplayName: Radium Staff
+			AA12.DisplayName: AA-12
+			Ak47.DisplayName: Kalashnikov Assault Rifle
+			Eradicator.DisplayName: Eradicator
+
+			Famas: {
+				DisplayName: Famas
+				Tooltip: Shoots in short bursts
+			}
+
+			FrostSMG: {
+				DisplayName: Frost SMG
+				Tooltip: Shoots Ice Bullets Instead of Musket Shots
+			}
+
+			GalilMAR.DisplayName: Galil MAR
+			AmethystBow.DisplayName: Amethyst Longbow
+			DiamondBow.DisplayName: Diamond Longbow
+			EmeraldBow.DisplayName: Emerald Longbow
+			RubyBow.DisplayName: Ruby Longbow
+			SapphireBow.DisplayName: Sapphire Longbow
+			TopazBow.DisplayName: Topaz Longbow
+
+			JimmyGun: {
+				DisplayName: Carl M/45
+				Tooltip: ""
+			}
+
+			Netherstrand.DisplayName: Netherstrand
+			OtherworldlyString2.DisplayName: Otherworldly String
+
+			OtherworldlyString: {
+				DisplayName: Otherworldly String
+				Tooltip: ""
+			}
+
+			Luger: {
+				DisplayName: Luger P08
+				Tooltip: ""
+			}
+
+			PumpShotgun.DisplayName: Pump Shotgun
+
+			Quadrant: {
+				DisplayName: Quadrant
+				Tooltip: Shoots in a 4 Burst
+			}
+
+			RocketGun: {
+				DisplayName: R0C-37
+				Tooltip: Replaces Musket Shots with Explosive Bullets
+			}
+
+			SodaliteBar.DisplayName: Sodalite Bar
+
+			SodaliteBreastplate: {
+				DisplayName: Sodalite Breastplate
+				Tooltip:
+					'''
+
+					Immunity to 'On Fire!'
+					+10 max mana and +10 max health
+					'''
+			}
+
+			SodaliteBroadsword.DisplayName: Sodalite Broadsword
+
+			SodaliteBullarang: {
+				DisplayName: Sodalite Bullarang
+				Tooltip: goes back to where you shot it from and goes trough walls if hitting a npc
+			}
+
+			SodaliteDualshot.DisplayName: Sodalite Dualshot
+
+			SodaliteHelmet: {
+				DisplayName: Sodalite Helmet
+				Tooltip:
+					'''
+					3% Increased Melee Damage and Crit Chance
+					Enemies are more likely to target you
+					'''
+			}
+
+			SodaliteLeggings: {
+				DisplayName: Sodalite Leggings
+				Tooltip: 10% Increased Movement Speed
+			}
+
+			SodaliteOre.DisplayName: Sodalite Ore
+			SodalitePickaxe.DisplayName: Sodalite Pickaxe
+			SodaliteShortsword.DisplayName: Sodalite Shortsword
+
+			SodaliteStaff: {
+				DisplayName: Sodalite Staff
+				Tooltip: Heals you when you crit
+			}
+
+			SodaliteThrowingKnife.DisplayName: Sodalite Throwing Knife
+			SodaliteWaraxe.DisplayName: Sodalite Waraxe
+
+			BarofSouls: {
+				DisplayName: Bar of Souls
+				Tooltip: "'The Light And Night have fused into one'"
+			}
+
+			SoulBoots: {
+				DisplayName: Soul Boots
+				Tooltip:
+					'''
+					Increased Movement Speed by 15%
+					Increased All Damage By 6%
+					'''
+			}
+
+			SoulBow: {
+				DisplayName: Soul Bow
+				Tooltip: Every 5th shot shoots a soul arrow that deals double damage
+			}
+
+			SoulBreastplate: {
+				DisplayName: Soul Breastplate
+				Tooltip: Increased Attack Speed by 5%
+			}
+
+			SoulMask: {
+				DisplayName: Soul Mask
+				Tooltip: Icreased Crit Chance By 9%
+			}
+
+			SoulSaber.DisplayName: Soul Saber
+			SoulSlasher.DisplayName: Soul Slasher
+			SoulStaff.DisplayName: Soul Staff
+			SoulStriker.DisplayName: Soul Miner
+
+			bbook: {
+				DisplayName: Bone book
+				Tooltip:
+					'''
+					Bones
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			CaulkGun: {
+				DisplayName: Caulk Gun
+				Tooltip:
+					'''
+					'Its been enchanted so it can shoot bullets'
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			ColSwod: {
+				DisplayName: Cool Sword
+				Tooltip: Sword that does stuff
+			}
+
+			DigitalBow: {
+				DisplayName: Digital Bow
+				Tooltip:
+					'''
+					'Growtopia'
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			dualmini: {
+				DisplayName: Dual Minigun
+				Tooltip:
+					'''
+					Double Power!
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			freze: {
+				DisplayName: Blaster
+				Tooltip: "[c/eeaa33:UNOBTAIANBLE]"
+			}
+
+			Hp: {
+				DisplayName: 1000 life Item
+				Tooltip:
+					'''
+					Sets your max life to 1000
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			Hpe: {
+				DisplayName: 5000 life Item
+				Tooltip:
+					'''
+					Sets your max life to 5000
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			lasermini: {
+				DisplayName: Laser Minigun
+				Tooltip:
+					'''
+					Pe-pe-pe pew
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			LinkedSword: {
+				DisplayName: Linked Sword
+				Tooltip: "[c/eeaa33:UNOBTAIANBLE]"
+			}
+
+			mini: {
+				DisplayName: Minigun
+				Tooltip:
+					'''
+					Pretty large for a thing called `Minigun?
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			MoreMinions: {
+				DisplayName: Minion Item
+				Tooltip:
+					'''
+					Sets max minion amount to 100000000
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			Onx: {
+				DisplayName: Void Blaster
+				Tooltip: "[c/eeaa33:UNOBTAIANBLE]"
+			}
+
+			Opifier: {
+				DisplayName: OPIFIER
+				Tooltip: "[c/eeaa33:UNOBTAIANBLE]"
+			}
+
+			paper: {
+				DisplayName: Paper
+				Tooltip:
+					'''
+					Causes paper cuts
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			CritCombo: {
+				DisplayName: Test Sword - Crit Combo
+				Tooltip:
+					'''
+					The more crits in a row the more damage
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			DefenseIgnore: {
+				DisplayName: Test Sword - Defense Ignore
+				Tooltip:
+					'''
+					Test Test
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			Delete: {
+				DisplayName: Test Sword - Delete
+				Tooltip:
+					'''
+					Delete
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			Maxlife: {
+				DisplayName: Test Sword - -100 MaxLife
+				Tooltip:
+					'''
+					Removes Max life from the target 
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			Percent: {
+				DisplayName: Test Sword - %
+				Tooltip:
+					'''
+					Deals 0.5% of the enemys hp on hit
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			StackDamage: {
+				DisplayName: Test Sword - Stack Power
+				Tooltip:
+					'''
+					The more of this sword is in a stack the more powerful it is
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			TrueDelete: {
+				DisplayName: Test Sword - TRUE Delete
+				Tooltip:
+					'''
+					Deletes everything including the drops and effects
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			ZenithStaff: {
+				DisplayName: Paragon
+				Tooltip:
+					'''
+					Right click to change mode
+					[c/eeaa33:UNOBTAIANBLE]
+					'''
+			}
+
+			VoidBar.DisplayName: Void Bar
+
+			VoidBody: {
+				DisplayName: Void Breastplate
+				Tooltip: Increased damage based on mana
+			}
+
+			VoidBow.DisplayName: Bow of Emptiness
+
+			VoidHead: {
+				DisplayName: Void Mask
+				Tooltip: Increase crit chance based on mana
+			}
+
+			VoidLegs: {
+				DisplayName: Void Leggings
+				Tooltip: Increased Movement Speed based on mana
+			}
+
+			VoidOre: {
+				DisplayName: Void Ore
+				Tooltip: Ore that absorbs mana
+			}
+
+			VoidPickaxeaxe.DisplayName: Void Digger
+			VoidStaff.DisplayName: Infinitude Staff
+			VoidSword.DisplayName: Abyssblade
+			VoidTrident.DisplayName: Void Trident
+		}
+
+		NPCs: {
+			Rock.DisplayName: The Rock
+			Rogue.DisplayName: Rogue
+		}
+
+		Projectiles: {
+			AirSlash.DisplayName: Air Slash
+			AirSlashThing.DisplayName: Arondite Slash Post Moonlord
+			AnotherZenith.DisplayName: Zenith Staff
+			Blade.DisplayName: Blade
+			Bone.DisplayName: Bone Beam
+			Bone1.DisplayName: Bone Beam Pierce
+			BounceLaser.DisplayName: Bounce Laser
+			Bullet.DisplayName: Boomerang Bullet
+			Chains.DisplayName: Blades of Discord Chain
+			Chaos.DisplayName: Soul Staff Projectile
+			cshard.DisplayName: opfier shard
+			DarkAirSlash.DisplayName: Dark Age Slash
+			Earth.DisplayName: Earth Piece
+			enchanted.DisplayName: Hallowed Sword Beam
+			flam.DisplayName: Flame
+			flam2.DisplayName: Flame
+			FrostBullet.DisplayName: Frost Bullet
+			FrozenShield.DisplayName: Frost Shield
+			hamr.DisplayName: Magic Mallet
+			knife.DisplayName: Knife
+			Ore.DisplayName: Ore
+			punch.DisplayName: Punch
+			RadiumArrow.DisplayName: Radium Arrow
+			RadiumRanseurProjectile.DisplayName: Titanium Trident Revamp
+			RainbowGemSlash.DisplayName: Rainbow Slash
+			roj.DisplayName: Radiation Flower
+			SacrificeSlash.DisplayName: Sacrifice Slash
+			Shard.DisplayName: Rune Shard
+			LinkedSwordProj.DisplayName: Example Shortsword
+			SodaliteShortswordProj.DisplayName: Example Shortsword
+			SteelShortswordProj.DisplayName: Example Shortsword
+			SoulArrow.DisplayName: Soul Arrow
+			TestBullet.DisplayName: Test Bullet
+			VoidBeam.DisplayName: Void Beam
+			VoidSlash.DisplayName: Void Twinkle
+			VoidTrident.DisplayName: Void Trident
+			VoidTridentBlast.DisplayName: Void Trident Blast
+		}
+
+		Tiles: {
+			RadiumOre.MapEntry: Radium
+			SodaliteOre.MapEntry: Sodalite
+			VoidOre.MapEntry: Void Ore
+		}
+	}
+}

@@ -1,7 +1,8 @@
-Adds Longswords, Daggers and a lot more stuff just because i can
+Random mod made by some guy that likes bread and stuff
 
+i get random ideas sometimes for terraria mods and i usually put them here
 
-version 1.2
-- Added More tools
-- Fixed Stuff
-- Traveler NPC
+This mod currently adds:
+- A bunch of items
+- 3 New Ores
+- 1 New Town NPC

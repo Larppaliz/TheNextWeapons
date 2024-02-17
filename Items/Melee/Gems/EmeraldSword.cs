@@ -1,0 +1,42 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TheNextWeapons.Items.Melee.Gems
+{
+    public class EmeraldSword : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            // DisplayName.SetDefault("Emerald Sword");
+            // Tooltip.SetDefault("");
+        }
+        public override void SetDefaults()
+        {
+            Item.damage = 21;
+            Item.DamageType = DamageClass.Melee;
+            Item.width = 32;
+            Item.height = 32;
+            Item.maxStack = 1;
+            Item.useTime = 17;
+            Item.useAnimation = 17;
+            Item.useStyle = 1;
+            Item.knockBack = 2;
+            Item.value = 3000;
+            Item.rare = 1;
+            Item.UseSound = SoundID.Item1;
+            Item.noMelee = false;
+            Item.scale = 0.8f;
+            Item.crit = 8;
+            Item.autoReuse = true;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Emerald, 10);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+    }
+}
